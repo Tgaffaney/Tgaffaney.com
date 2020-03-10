@@ -167,6 +167,30 @@ footer i:hover {
 	color: var(--theme);
 }
 
+/*
+
+	Landing Page
+
+*/
+
+.landing-big-circle {
+	display:inline-block;
+	height: 200px;
+	width: 200px;
+	margin: 20px;
+	border-radius:100%;
+	border: 3px solid var(--theme);
+}
+
+.landing-wrapper {
+	text-align:center;
+}
+
+.btn.landing {
+	font-size:2em;
+	margin:10px 10px;
+}
+
 
 /*
 
