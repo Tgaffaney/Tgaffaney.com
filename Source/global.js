@@ -1,6 +1,3 @@
-var path = window.location.pathname;
-var page = path.split("/").pop().replace(".html","");
-
 function setTheme() {
 	var possibleThemes = ["--blue","--indigo","--pink","--red","--orange","--yellow","--teal"];
 	var selectedIndex = Math.floor(Math.random() * possibleThemes.length);
@@ -8,7 +5,7 @@ function setTheme() {
 	document.documentElement.style.setProperty('--theme', theme);
 }
 
-function init(){
+function init(page){
 	var navHtml = `
 	<nav class="navbar navbar-expand-lg navbar-dark noselect">
 		<a class="navbar-brand" href="#"></a>
@@ -19,22 +16,22 @@ function init(){
 	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item">
-	        		<div id="home" class="nav_element" onclick="window.location='home.html'">
+	        		<div id="home" class="nav_element" onclick="window.location='https://www.tgaffaney.com'">
 	        			Home 
 	        		</div>
 	      		</li>
 	      		<li class="nav-item">
-	        		<div id="projects" class="nav_element" onclick="window.location='projects.html'">
+	        		<div id="projects" class="nav_element" onclick="window.location='projects'">
 	        			Projects
 	        		</div>
 	      		</li>
 	      		<!--<li class="nav-item">
-	        		<div id="about" class="nav_element" onclick="window.location='about.html'">
+	        		<div id="about" class="nav_element" onclick="window.location='about'">
 	        			About
 	        		</div>
 	      		</li>-->
 	      		<li class="nav-item">
-	        		<div id="contact" class="nav_element" onclick="window.location='contact.html'">
+	        		<div id="contact" class="nav_element" onclick="window.location='contact'">
 	        			Get in touch 
 	        		</div>
 	      		</li>
@@ -51,11 +48,10 @@ function init(){
 	</footer>
 	`;
 
+	setTheme();
 
 	$('#middle').prepend(navHtml);
 	$('#middle').append(footerHtml);
 	$('#' + page).addClass('active')
-	setTheme();
+	
 }
-
-init();
